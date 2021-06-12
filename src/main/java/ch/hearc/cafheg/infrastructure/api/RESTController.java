@@ -65,7 +65,7 @@ public class RESTController {
     return inTransaction(() -> allocationService.getParentDroitAllocation(famille));
   }
 
-    @PostMapping("/droits/remove-allocataire")
+    @PostMapping("/remove-allocataire")
     public String removeAllocataire(@RequestBody Map<String, Object> parameters) {
         long idAllocataire = (long)parameters.getOrDefault("idAllocataire", 0);
         return inTransaction(() -> allocationService.removeAllocataire(idAllocataire));
