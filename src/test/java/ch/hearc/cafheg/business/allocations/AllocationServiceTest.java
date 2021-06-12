@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.*;
 
+import ch.hearc.cafheg.infrastructure.persistance.VersementMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -24,6 +25,7 @@ class AllocationServiceTest {
 
     private AllocataireMapper allocataireMapper;
     private AllocationMapper allocationMapper;
+    private VersementMapper versementMapper;
     Map<String, Object> parameters;
 
 
@@ -31,6 +33,7 @@ class AllocationServiceTest {
     void setUp() {
         allocataireMapper = Mockito.mock(AllocataireMapper.class);
         allocationMapper = Mockito.mock(AllocationMapper.class);
+        versementMapper = Mockito.mock(VersementMapper.class);
 
         allocationService = new AllocationService(allocataireMapper, allocationMapper, versementMapper);
 
