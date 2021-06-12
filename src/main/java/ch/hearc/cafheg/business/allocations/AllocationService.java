@@ -61,14 +61,14 @@ public class AllocationService {
 
     public String removeAllocataire(long id) {
 
-        List<VersementParentParMois> versementAllocations = versementMapper.findVersementParentEnfantParMois();
+        List<VersementParentParMois> versementsParentParMois = versementMapper.findVersementParentEnfantParMois();
 
-        VersementParentParMois versement = versementAllocations.stream().filter(e -> e.getParentId()==id)
+        VersementParentParMois versement = versementsParentParMois.stream().filter(e -> e.getParentId()==id)
                 .findFirst()
                 .orElse(null);
 
-        if(versement==null){
-            return "versementTrouvé";
+        if(versement!=null){
+            return versement.getParentId()+" idParent";
         }else{
             return "pasDeVersement";
         }
