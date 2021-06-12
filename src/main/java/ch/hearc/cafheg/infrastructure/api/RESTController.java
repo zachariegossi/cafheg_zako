@@ -71,6 +71,14 @@ public class RESTController {
         return inTransaction(() -> allocationService.removeAllocataire(Long.parseLong(idAllocataire)));
     }
 
+  @PostMapping("/update-allocataire")
+  public String updateallocataire(@RequestBody Map<String, Object> parameters) {
+    String idAllocataire = (String)parameters.getOrDefault("idAllocataire", "0");
+    String nomAllocataire = (String)parameters.getOrDefault("nomAllocataire", "");
+    String prenomAllocataire = (String)parameters.getOrDefault("nomAllocataire", "");
+    return inTransaction(() -> allocationService.updateAllocataire(idAllocataire, nomAllocataire, prenomAllocataire));
+  }
+
   @GetMapping("/allocataires")
   public List<Allocataire> allocataires(
       @RequestParam(value = "startsWith", required = false) String start) {

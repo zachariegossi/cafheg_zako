@@ -82,4 +82,8 @@ public class AllocationService {
         //Allocataire allocataire = allocataireMapper.findById(id);
         //return "done";
     }
+
+    public String updateAllocataire(String idAllocataire, String nomAllocataire, String prenomAllocataire) {
+        return null;
+    }
 }
