@@ -67,8 +67,8 @@ public class RESTController {
 
     @PostMapping("/remove-allocataire")
     public String removeAllocataire(@RequestBody Map<String, Object> parameters) {
-        long idAllocataire = (long)parameters.getOrDefault("idAllocataire", 0);
-        return inTransaction(() -> allocationService.removeAllocataire(idAllocataire));
+        String idAllocataire = (String)parameters.getOrDefault("idAllocataire", "0");
+        return inTransaction(() -> allocationService.removeAllocataire(Long.parseLong(idAllocataire)));
     }
 
   @GetMapping("/allocataires")
