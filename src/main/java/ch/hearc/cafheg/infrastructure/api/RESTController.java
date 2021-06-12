@@ -75,7 +75,7 @@ public class RESTController {
   public String updateallocataire(@RequestBody Map<String, Object> parameters) {
     String idAllocataire = (String)parameters.getOrDefault("idAllocataire", "0");
     String nomAllocataire = (String)parameters.getOrDefault("nomAllocataire", "");
-    String prenomAllocataire = (String)parameters.getOrDefault("nomAllocataire", "");
+    String prenomAllocataire = (String)parameters.getOrDefault("prenomAllocataire", "");
     return inTransaction(() -> allocationService.updateAllocataire(idAllocataire, nomAllocataire, prenomAllocataire));
   }
 
