@@ -69,10 +69,11 @@ public class AllocationService {
 
         if(versement==null){
             //Aucun versement trouvé pour ce parent
-            if(allocataireMapper.removeAllocataireByID(id)){
-                return "falseDeleted";
+            int nbRowDeleted = allocataireMapper.removeAllocataireByID(id);
+            if( nbRowDeleted > 0){
+                return nbRowDeleted+" row(s) deleted";
             } else {
-                return "trueDeleted";
+                return "Nothing removed";
             }
         }else{
             return "Impossible de supprimé l'allocataire, il a deja fait des versements.";

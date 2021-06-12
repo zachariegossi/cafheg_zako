@@ -53,14 +53,14 @@ public class AllocataireMapper extends Mapper {
     }
   }
 
-    public boolean removeAllocataireByID(long id) {
+    public int removeAllocataireByID(long id) {
       Connection connection = getConnection();
       try {
         PreparedStatement preparedStatement = connection.prepareStatement(
                 "DELETE FROM ALLOCATAIRES WHERE NUMERO=?");
         preparedStatement.setLong(1, id);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        return resultSet.next();
+        int nbRowDeleted = preparedStatement.executeUpdate();
+        return nbRowDeleted;
       } catch (SQLException e) {
         throw new RuntimeException(e);
       }
