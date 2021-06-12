@@ -67,8 +67,13 @@ public class AllocationService {
                 .findFirst()
                 .orElse(null);
 
-        if(versement!=null){
-            return versement.getParentId()+" idParent";
+        if(versement==null){
+            //Aucun versement trouvé pour ce parent
+            if(allocataireMapper.removeAllocataireByID(id)){
+                return "falseDeleted";
+            } else {
+                return "trueDeleted";
+            }
         }else{
             return "pasDeVersement131";
         }
