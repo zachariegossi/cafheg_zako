@@ -21,39 +21,19 @@ public class Parent {
         return activityLucrative;
     }
 
-    public void setActivityLucrative(boolean activityLucrative) {
-        this.activityLucrative = activityLucrative;
-    }
-
     public boolean isAutoriteParentale() {
         return autoriteParentale;
-    }
-
-    public void setAutoriteParentale(boolean autoriteParentale) {
-        this.autoriteParentale = autoriteParentale;
     }
 
     public String getCanton() {
         return canton;
     }
 
-    public void setCanton(String canton) {
-        this.canton = canton;
-    }
-
     public boolean isIndependant() {
         return independant;
     }
 
-    public void setIndependant(boolean independant) {
-        this.independant = independant;
-    }
-
     public Number getSalaire() {
         return salaire;
-    }
-
-    public void setSalaire(Number salaire) {
-        this.salaire = salaire;
     }
 }

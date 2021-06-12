@@ -16,23 +16,11 @@ public class Famille {
         return parent1;
     }
 
-    public void setParent1(Parent parent1) {
-        this.parent1 = parent1;
-    }
-
     public Parent getParent2() {
         return parent2;
     }
 
-    public void setParent2(Parent parent2) {
-        this.parent2 = parent2;
-    }
-
     public Enfant getEnfant() {
         return enfant;
-    }
-
-    public void setEnfant(Enfant enfant) {
-        this.enfant = enfant;
     }
 }
