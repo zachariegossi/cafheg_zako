@@ -8,9 +8,8 @@ import ch.hearc.cafheg.infrastructure.persistance.AllocataireMapper;
 import ch.hearc.cafheg.infrastructure.persistance.AllocationMapper;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -21,6 +20,8 @@ class AllocationServiceTest {
 
   private AllocataireMapper allocataireMapper;
   private AllocationMapper allocationMapper;
+  Map<String, Object> parameters;
+
 
   @BeforeEach
   void setUp() {
@@ -28,6 +29,8 @@ class AllocationServiceTest {
     allocationMapper = Mockito.mock(AllocationMapper.class);
 
     allocationService = new AllocationService(allocataireMapper, allocationMapper);
+
+    parameters = new HashMap<String, Object>();
   }
 
   @Test
@@ -69,5 +72,63 @@ class AllocationServiceTest {
         () -> assertThat(all.get(1).getDebut()).isEqualTo(LocalDate.now()),
         () -> assertThat(all.get(1).getFin()).isNull());
   }
+
+  @Test
+  void getParentDroitAllocation_Given_1ParentWitLucrativeActivity_ShouldBe_Parent1() {
+    parameters.put("parent1ActiviteLucrative", true);
+    String result = allocationService.getParentDroitAllocation(parameters);
+    assertThat(result.equals("parent1"));
+  }
+
+  @Test
+  void getParentDroitAllocation_Given_2ndParent_LivingWithChildren_ShouldBe_Parent2() {
+    parameters.put("parent1ActiviteLucrative", true);
+    parameters.put("parent2ActiviteLucrative", true);
+    parameters.put("enfantResidence", "Sierre");
+    parameters.put("parent1Residence", "Sion");
+    parameters.put("parent2Residence", "Sierre");
+    String result = allocationService.getParentDroitAllocation(parameters);
+    assertThat(result.equals("parent2"));
+  }
+
+  @Test
+  void getParentDroitAllocation_Given_1stParent_BiggerSalary_ShouldBe_Parent1() {
+    parameters.put("parent1ActiviteLucrative", true);
+    parameters.put("parent2ActiviteLucrative", true);
+    parameters.put("enfantResidence", "Sierre");
+    parameters.put("parent1Residence", "Sierre");
+    parameters.put("parent2Residence", "Sierre");
+    parameters.put("parent1Salaire", 250000);
+    parameters.put("parent2Salaire", 70000);
+    String result = allocationService.getParentDroitAllocation(parameters);
+    assertThat(result.equals("parent1"));
+  }
+
+  @Test
+  void getParentDroitAllocation_Given_1stParent_BiggerSalary_ButParent2LivesWithChildren_ShouldBe_Parent1() {
+    parameters.put("parent1ActiviteLucrative", true);
+    parameters.put("parent2ActiviteLucrative", true);
+    parameters.put("enfantResidence", "Sierre");
+    parameters.put("parent1Residence", "Sion");
+    parameters.put("parent2Residence", "Sierre");
+    parameters.put("parent1Salaire", 250000);
+    parameters.put("parent2Salaire", 70000);
+    String result = allocationService.getParentDroitAllocation(parameters);
+    assertThat(result.equals("parent2"));
+  }
+
+  @Test
+  void getParentDroitAllocation_Given_1stParent_BiggerSalary_AndParent1LivesWithChildren_ShouldBe_Parent1() {
+    parameters.put("parent1ActiviteLucrative", true);
+    parameters.put("parent2ActiviteLucrative", true);
+    parameters.put("enfantResidence", "Sierre");
+    parameters.put("parent1Residence", "Sion");
+    parameters.put("parent2Residence", "Sierre");
+    parameters.put("parent1Salaire", 250000);
+    parameters.put("parent2Salaire", 70000);
+    String result = allocationService.getParentDroitAllocation(parameters);
+    assertThat(result.equals("parent2"));
+  }
+
 
 }
