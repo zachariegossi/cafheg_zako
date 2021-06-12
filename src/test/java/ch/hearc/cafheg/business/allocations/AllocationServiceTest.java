@@ -214,4 +214,35 @@ class AllocationServiceTest {
     }
 
 
+    //INSERT INTO ALLOCATAIRES VALUES(14,'756.6457.6513.65','Kacy','Stead');
+    @Test
+    void updateAllocataire_Given_14_Kacy_Steed_ShouldBe_Allocataire_Updated() {
+        String id = "14";
+        String nom = "Kacy";
+        String prenom = "Steed";
+        String result = allocationService.updateAllocataire(id, nom,prenom);
+        assertThat(result.equals("Allocataire Updated"));
+    }
+
+    //INSERT INTO ALLOCATAIRES VALUES(14,'756.6457.6513.65','Kacy','Stead');
+    @Test
+    void updateAllocataire_Given_25_Kacy_Steed_ShouldBe_Allocataire_Unfound() {
+        String id = "25";
+        String nom = "Kacy";
+        String prenom = "Steed";
+        String result = allocationService.updateAllocataire(id, nom,prenom);
+        assertThat(result.equals("Allocataire Unfound"));
+    }
+
+    //INSERT INTO ALLOCATAIRES VALUES(14,'756.6457.6513.65','Kacy','Stead');
+    @Test
+    void updateAllocataire_Given_14_Kacy_Stead_ShouldBe_Allocataire_Correct() {
+        String id = "25";
+        String nom = "Kacy";
+        String prenom = "Steed";
+        String result = allocationService.updateAllocataire(id, nom,prenom);
+        assertThat(result.equals("Allocataire Correct"));
+    }
+
+
 }
