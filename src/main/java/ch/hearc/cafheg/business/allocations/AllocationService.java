@@ -1,14 +1,15 @@
 package ch.hearc.cafheg.business.allocations;
 
-import ch.hearc.cafheg.business.versements.Enfant;
 import ch.hearc.cafheg.business.versements.Famille;
 import ch.hearc.cafheg.business.versements.Parent;
+import ch.hearc.cafheg.business.versements.VersementAllocation;
+import ch.hearc.cafheg.business.versements.VersementParentParMois;
 import ch.hearc.cafheg.infrastructure.persistance.AllocataireMapper;
 import ch.hearc.cafheg.infrastructure.persistance.AllocationMapper;
+import ch.hearc.cafheg.infrastructure.persistance.VersementMapper;
+import com.google.common.collect.Iterables;
 
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
 
 public class AllocationService {
 
@@ -18,12 +19,14 @@ public class AllocationService {
 
     private final AllocataireMapper allocataireMapper;
     private final AllocationMapper allocationMapper;
+    private final VersementMapper versementMapper;
 
     public AllocationService(
             AllocataireMapper allocataireMapper,
-            AllocationMapper allocationMapper) {
+            AllocationMapper allocationMapper, VersementMapper versementMapper) {
         this.allocataireMapper = allocataireMapper;
         this.allocationMapper = allocationMapper;
+        this.versementMapper = versementMapper;
     }
 
     public List<Allocataire> findAllAllocataires(String likeNom) {
@@ -54,5 +57,23 @@ public class AllocationService {
 
         return DRAW;
 
+    }
+
+    public String removeAllocataire(long id) {
+
+        List<VersementParentParMois> versementAllocations = versementMapper.findVersementParentEnfantParMois();
+
+        VersementParentParMois versement = versementAllocations.stream().filter(e -> e.getParentId()==id)
+                .findFirst()
+                .orElse(null);
+
+        if(versement==null){
+            return "versementTrouvé";
+        }else{
+            return "pasDeVersement";
+        }
+
+        //Allocataire allocataire = allocataireMapper.findById(id);
+        //return "done";
     }
 }

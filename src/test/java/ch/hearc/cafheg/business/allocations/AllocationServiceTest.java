@@ -32,7 +32,7 @@ class AllocationServiceTest {
         allocataireMapper = Mockito.mock(AllocataireMapper.class);
         allocationMapper = Mockito.mock(AllocationMapper.class);
 
-        allocationService = new AllocationService(allocataireMapper, allocationMapper);
+        allocationService = new AllocationService(allocataireMapper, allocationMapper, versementMapper);
 
         parameters = new HashMap<String, Object>();
     }
