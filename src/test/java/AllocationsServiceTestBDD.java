@@ -5,6 +5,7 @@ import ch.hearc.cafheg.business.versements.Famille;
 import ch.hearc.cafheg.business.versements.Parent;
 import ch.hearc.cafheg.infrastructure.persistance.AllocataireMapper;
 import ch.hearc.cafheg.infrastructure.persistance.AllocationMapper;
+import ch.hearc.cafheg.infrastructure.persistance.VersementMapper;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,6 +19,7 @@ public class AllocationsServiceTestBDD {
 
     private AllocataireMapper allocataireMapper;
     private AllocationMapper allocationMapper;
+    private VersementMapper versementMapper;
     private Parent parent1;
     private Parent parent2;
     private Enfant enfant;
@@ -27,6 +29,7 @@ public class AllocationsServiceTestBDD {
     public void initMapper() {
         allocataireMapper = Mockito.mock(AllocataireMapper.class);
         allocationMapper = Mockito.mock(AllocationMapper.class);
+        versementMapper = Mockito.mock(VersementMapper.class);
 
         //Parent parent = Mockito.mock(Parent.class);
         //Enfant enfait = Mockito.mock(Enfant.class);
