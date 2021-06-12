@@ -84,6 +84,18 @@ public class AllocationService {
     }
 
     public String updateAllocataire(String idAllocataire, String nomAllocataire, String prenomAllocataire) {
+        long id = Long.parseLong(idAllocataire);
+        Allocataire allocataire = allocataireMapper.findById(id);
+        if(allocataire!=null){
+            if(allocataire.getNom().equals(nomAllocataire) && allocataire.getPrenom().equals(prenomAllocataire)){
+                return "Allocataire Correct";
+            } else {
+                int nbRowUpdate = allocataireMapper.updateAllocataireNomPrenom(id, nomAllocataire, prenomAllocataire);
+
+            }
+        } else {
+            return "Allocataire Unfound";
+        }
         return null;
     }
 }

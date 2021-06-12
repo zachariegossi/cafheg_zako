@@ -221,7 +221,7 @@ class AllocationServiceTest {
         String nom = "Kacy";
         String prenom = "Steed";
         String result = allocationService.updateAllocataire(id, nom,prenom);
-        assertThat(result.equals("Allocataire Updated"));
+        assertThat(result.equals("1 Allocataire(s) Updated"));
     }
 
     //INSERT INTO ALLOCATAIRES VALUES(14,'756.6457.6513.65','Kacy','Stead');
