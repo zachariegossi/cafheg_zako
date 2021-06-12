@@ -77,8 +77,8 @@ public class AllocataireMapper extends Mapper {
       preparedStatement.setString(1, nomAllocataire);
       preparedStatement.setString(2, prenomAllocataire);
       preparedStatement.setLong(3, id);
-      int nbRowDeleted = preparedStatement.executeUpdate();
-      return nbRowDeleted;
+      int nbRowUpdated = preparedStatement.executeUpdate();
+      return nbRowUpdated;
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }

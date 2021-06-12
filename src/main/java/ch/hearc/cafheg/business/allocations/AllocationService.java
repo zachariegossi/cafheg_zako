@@ -91,11 +91,14 @@ public class AllocationService {
                 return "Allocataire Correct";
             } else {
                 int nbRowUpdate = allocataireMapper.updateAllocataireNomPrenom(id, nomAllocataire, prenomAllocataire);
-
+                if(nbRowUpdate > 0){
+                    return nbRowUpdate + " Allocataire(s) Updated";
+                } else {
+                    return "Unable to update Allocataire.";
+                }
             }
         } else {
             return "Allocataire Unfound";
         }
-        return null;
     }
 }
