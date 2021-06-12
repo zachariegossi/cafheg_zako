@@ -28,7 +28,7 @@ public class RESTController {
   private final VersementService versementService;
 
   public RESTController() {
-    this.allocationService = new AllocationService(new AllocataireMapper(), new AllocationMapper());
+    this.allocationService = new AllocationService(new AllocataireMapper(), new AllocationMapper(), new VersementMapper());
     this.versementService = new VersementService(new VersementMapper(), new AllocataireMapper(),
         new PDFExporter(new EnfantMapper()));
   }
@@ -64,6 +64,12 @@ public class RESTController {
     Famille famille = new Famille(parent1,parent2,enfant);
     return inTransaction(() -> allocationService.getParentDroitAllocation(famille));
   }
+
+    @PostMapping("/droits/remove-allocataire")
+    public String removeAllocataire(@RequestBody Map<String, Object> parameters) {
+        long idAllocataire = 1231;
+        return inTransaction(() -> allocationService.removeAllocataire(idAllocataire));
+    }
 
   @GetMapping("/allocataires")
   public List<Allocataire> allocataires(

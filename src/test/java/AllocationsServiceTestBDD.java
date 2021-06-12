@@ -1,4 +1,3 @@
-import ch.hearc.cafheg.business.allocations.Allocation;
 import ch.hearc.cafheg.business.allocations.AllocationService;
 import ch.hearc.cafheg.business.allocations.NoAVS;
 import ch.hearc.cafheg.business.versements.Enfant;
@@ -7,15 +6,11 @@ import ch.hearc.cafheg.business.versements.Parent;
 import ch.hearc.cafheg.infrastructure.persistance.AllocataireMapper;
 import ch.hearc.cafheg.infrastructure.persistance.AllocationMapper;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Mockito;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class AllocationsServiceTestBDD {
 
@@ -40,7 +35,7 @@ public class AllocationsServiceTestBDD {
 
     @Given("Create AllocationService")
     public void createAllocationService() {
-        allocationService = new AllocationService(allocataireMapper, allocationMapper);
+        allocationService = new AllocationService(allocataireMapper, allocationMapper, versementMapper);
         parent1 = new Parent(false,false,"",false,false,0);
         parent2 = new Parent(false,false,"",false,false,0);
         enfant = new Enfant(new NoAVS("000.0000.000.0000"),"Kelso","Bob");
