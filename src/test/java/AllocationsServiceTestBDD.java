@@ -1,5 +1,9 @@
 import ch.hearc.cafheg.business.allocations.Allocation;
 import ch.hearc.cafheg.business.allocations.AllocationService;
+import ch.hearc.cafheg.business.allocations.NoAVS;
+import ch.hearc.cafheg.business.versements.Enfant;
+import ch.hearc.cafheg.business.versements.Famille;
+import ch.hearc.cafheg.business.versements.Parent;
 import ch.hearc.cafheg.infrastructure.persistance.AllocataireMapper;
 import ch.hearc.cafheg.infrastructure.persistance.AllocationMapper;
 import io.cucumber.java.Before;
@@ -19,37 +23,43 @@ public class AllocationsServiceTestBDD {
 
     private AllocataireMapper allocataireMapper;
     private AllocationMapper allocationMapper;
-    Map<String, Object> parameters;
+    private Parent parent1;
+    private Parent parent2;
+    private Enfant enfant;
     String result;
 
     @Before
     public void initMapper() {
         allocataireMapper = Mockito.mock(AllocataireMapper.class);
         allocationMapper = Mockito.mock(AllocationMapper.class);
+
+        //Parent parent = Mockito.mock(Parent.class);
+        //Enfant enfait = Mockito.mock(Enfant.class);
+        //famille = Mockito.mock(Famille.class);
     }
 
     @Given("Create AllocationService")
     public void createAllocationService() {
         allocationService = new AllocationService(allocataireMapper, allocationMapper);
-        parameters = new HashMap<String, Object>();
+        parent1 = new Parent(false,false,"",false,false,0);
+        parent2 = new Parent(false,false,"",false,false,0);
+        enfant = new Enfant(new NoAVS("000.0000.000.0000"),"Kelso","Bob");
+    }
+    @When("I give 1st parent with lucrative activity")
+    public void iGiveStParentWithLucrativeActivity() {
+        parent1 = new Parent(true,false,"",false,false,0);
+        result = allocationService.getParentDroitAllocation(new Famille(parent1, parent2, enfant));
+    }
+    @Then("The result of One parent with lucrative activity is 1st parent")
+    public void theResultOfOneParentWithLucrativeActivityIsStParent() {
+        Assertions.assertEquals(result, "Parent1");
     }
 
-    @When("I give {int}st parent with lucrative activity")
-    public void iGiveStParentWithLucrativeActivity(int parentNumber) {
-        parameters.put("parent"+parentNumber+"ActiviteLucrative", true);
-        result = allocationService.getParentDroitAllocation(parameters);
-    }
-
-
-
-    @Then("The result of One parent with lucrative activity is {int}st parent")
-    public void theResultOfOneParentWithLucrativeActivityIsStParent(int parentNumber) {
-        Assertions.assertEquals(result, "Parent"+parentNumber);
-    }
-
-    @And("I give {int}nd parent with lucrative activity")
-    public void iGiveNdParentWithLucrativeActivity(int parentNumber) {
-        parameters.put("parent"+parentNumber+"ActiviteLucrative", true);
+    /* Abandoné car plus évalué
+    @And("I give 2nd parent with lucrative activity")
+    public void iGive2ndParentWithLucrativeActivity() {
+        parent2 = new Parent(true,false,"",false,false,0);
+        result = allocationService.getParentDroitAllocation(new Famille(parent1, parent2, enfant));
     }
 
     @And("the child lives with the {int}st parent")
@@ -65,4 +75,6 @@ public class AllocationsServiceTestBDD {
     public void theResultOfTwoParentsWithLucrativeActivityDivorcedAndTheChildLiveWithTheFirstOneIsStParent(int parentNumber) {
         Assertions.assertEquals(result, "Parent"+parentNumber);
     }
+
+     */
 }

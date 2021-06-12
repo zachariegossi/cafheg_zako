@@ -50,33 +50,9 @@ public class AllocationService {
 
         Parent parent1 = famille.getParent1();
         Parent parent2 = famille.getParent2();
-        Enfant enfant = famille.getEnfant();
-        if (parent1 == null) {
-            return PARENT_2;
-        }
-        if (parent2 == null) {
-            return PARENT_1;
-        }
 
-        if (parent1.isActivityLucrative() && parent2.isActivityLucrative()) {
-            if (parent1.isAutoriteParentale() && parent2.isAutoriteParentale()) {
 
-            } else {
-                if (!parent1.isAutoriteParentale()) {
-                    return PARENT_2;
-                }
-                if (!parent2.isAutoriteParentale()) {
-                    return PARENT_1;
-                }
-            }
-        } else if (!parent1.isActivityLucrative() && parent2.isActivityLucrative()) {
-            return PARENT_2;
-        } else if (parent1.isActivityLucrative() && !parent2.isActivityLucrative()) {
-            return PARENT_1;
-        } else {
-            return DRAW;
-        }
+        return DRAW;
 
     }
-}
 }

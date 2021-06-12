@@ -5,6 +5,10 @@ import static ch.hearc.cafheg.infrastructure.persistance.Database.inTransaction;
 import ch.hearc.cafheg.business.allocations.Allocataire;
 import ch.hearc.cafheg.business.allocations.Allocation;
 import ch.hearc.cafheg.business.allocations.AllocationService;
+import ch.hearc.cafheg.business.allocations.NoAVS;
+import ch.hearc.cafheg.business.versements.Enfant;
+import ch.hearc.cafheg.business.versements.Famille;
+import ch.hearc.cafheg.business.versements.Parent;
 import ch.hearc.cafheg.business.versements.VersementService;
 import ch.hearc.cafheg.infrastructure.pdf.PDFExporter;
 import ch.hearc.cafheg.infrastructure.persistance.AllocataireMapper;
@@ -43,8 +47,22 @@ public class RESTController {
   }
    */
   @PostMapping("/droits/quel-parent")
-  public String getParentDroitAllocation(@RequestBody Map<String, Object> params) {
-    return inTransaction(() -> allocationService.getParentDroitAllocation(params));
+  public String getParentDroitAllocation(@RequestBody Map<String, Object> parameters) {
+
+    String eR = (String)parameters.getOrDefault("enfantResidence", "");
+    Boolean p1AL = (Boolean)parameters.getOrDefault("parent1ActiviteLucrative", false);
+    String p1Residence = (String)parameters.getOrDefault("parent1Residence", "");
+    Boolean p2AL = (Boolean)parameters.getOrDefault("parent2ActiviteLucrative", false);
+    String p2Residence = (String)parameters.getOrDefault("parent2Residence", "");
+    Boolean pEnsemble = (Boolean)parameters.getOrDefault("parentsEnsemble", false);
+    Number salaireP1 = (Number) parameters.getOrDefault("parent1Salaire", BigDecimal.ZERO);
+    Number salaireP2 = (Number) parameters.getOrDefault("parent2Salaire", BigDecimal.ZERO);
+
+    Parent parent1 = new Parent(p1AL,true,p1Residence,p1Residence.equals(eR),false, salaireP1);
+    Parent parent2 = new Parent(p2AL,true,p2Residence,p2Residence.equals(eR),false, salaireP2);
+    Enfant enfant = new Enfant(new NoAVS("000.000.000.000"),"Kelso","Bob");
+    Famille famille = new Famille(parent1,parent2,enfant);
+    return inTransaction(() -> allocationService.getParentDroitAllocation(famille));
   }
 
   @GetMapping("/allocataires")

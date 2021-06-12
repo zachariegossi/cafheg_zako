@@ -5,14 +5,15 @@ public class Parent {
     private boolean activityLucrative;
     private boolean autoriteParentale;
     private String canton;
+    private boolean livingWithChild;
     private boolean independant;
     private Number salaire;
 
-
-    public Parent(boolean activityLucrative, boolean autoriteParentale, String canton, boolean independant, Number salaire) {
+    public Parent(boolean activityLucrative, boolean autoriteParentale, String canton, boolean livingWithChild, boolean independant, Number salaire) {
         this.activityLucrative = activityLucrative;
         this.autoriteParentale = autoriteParentale;
         this.canton = canton;
+        this.livingWithChild = livingWithChild;
         this.independant = independant;
         this.salaire = salaire;
     }
@@ -35,5 +36,9 @@ public class Parent {
 
     public Number getSalaire() {
         return salaire;
+    }
+
+    public boolean islivingWithChild() {
+        return livingWithChild;
     }
 }
