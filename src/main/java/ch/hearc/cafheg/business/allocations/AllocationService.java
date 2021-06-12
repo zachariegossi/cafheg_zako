@@ -75,7 +75,7 @@ public class AllocationService {
                 return "trueDeleted";
             }
         }else{
-            return "pasDeVersement131";
+            return "Impossible de supprimé l'allocataire, il a deja fait des versements.";
         }
 
         //Allocataire allocataire = allocataireMapper.findById(id);

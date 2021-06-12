@@ -57,7 +57,7 @@ public class AllocataireMapper extends Mapper {
       Connection connection = getConnection();
       try {
         PreparedStatement preparedStatement = connection.prepareStatement(
-                "DELETE FROM FROM ALLOCATAIRES WHERE NUMERO=?");
+                "DELETE FROM ALLOCATAIRES WHERE NUMERO=?");
         preparedStatement.setLong(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();
         return resultSet.next();
