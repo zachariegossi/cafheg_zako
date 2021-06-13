@@ -16,7 +16,7 @@ Afin de prendre en main l'API, j'ai utilisé Postman, qui permet de créer et ma
 requêtes POST et GET très simplement. J'en ai créé quelque unes afin de mieux comprendre
 le fonctionnement de l'application.
 
-![alt text](https://github.com/zachariegossi/cafheg_zako/blob/master/images/TEST_API_0.png?raw=true)
+![TDD 1](images/TDD_0.PNG?raw=true)
 
 En ayant déjà configuré le déploiement de l'application sur TOMCAT (Surtout utilisé avec la branche Master), 
 j'ai pu tester tout au long du projet directement les méthodes développées via l'API, sans lancer l'application car
