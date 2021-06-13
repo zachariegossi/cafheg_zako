@@ -29,7 +29,7 @@ public class AllocationService {
     this.allocataireMapper = allocataireMapper;
     this.allocationMapper = allocationMapper;
     this.versementMapper = versementMapper;
-    logger.info("starting AllocationService");
+
     logger.error("This is an error");
   }
 
@@ -42,7 +42,7 @@ public class AllocationService {
   }
 
   public String getParentDroitAllocation(Famille famille) {
-    System.out.println("Déterminer le droit aux allocations");
+    logger.info("Déterminer le droit aux allocations");
 
     /*
     String eR = (String)parameters.getOrDefault("enfantResidence", "");
@@ -130,16 +130,16 @@ public class AllocationService {
       //Aucun versement trouvé pour ce parent
       int nbRowDeleted = allocataireMapper.removeAllocataireByID(id);
       if (nbRowDeleted > 0) {
+        logger.info(nbRowDeleted + " row(s) deleted");
         return nbRowDeleted + " row(s) deleted";
       } else {
+        logger.info("Nothing removed");
         return "Nothing removed";
       }
     } else {
+      logger.info("Impossible de supprimé l'allocataire, il a deja fait des versements.");
       return "Impossible de supprimé l'allocataire, il a deja fait des versements.";
     }
-
-    //Allocataire allocataire = allocataireMapper.findById(id);
-    //return "done";
   }
 
   public String updateAllocataire(String idAllocataire, String nomAllocataire,
@@ -149,17 +149,21 @@ public class AllocationService {
     if (allocataire != null) {
       if (allocataire.getNom().equals(nomAllocataire) && allocataire.getPrenom()
           .equals(prenomAllocataire)) {
+        logger.info("Allocataire Correct");
         return "Allocataire Correct";
       } else {
         int nbRowUpdate = allocataireMapper
             .updateAllocataireNomPrenom(id, nomAllocataire, prenomAllocataire);
         if (nbRowUpdate > 0) {
+          logger.info(nbRowUpdate + " Allocataire(s) Updated");
           return nbRowUpdate + " Allocataire(s) Updated";
         } else {
+          logger.info("Unable to update Allocataire.");
           return "Unable to update Allocataire.";
         }
       }
     } else {
+      logger.info("Allocataire Unfound");
       return "Allocataire Unfound";
     }
   }

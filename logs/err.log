@@ -1,14 +1,20 @@
-2021-06-13 21:37:15,748 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
+2021-06-13 21:41:05,998 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
 java.lang.NullPointerException: null
 	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:30)
 	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
-2021-06-13 21:37:17,444 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] ERROR {}
+2021-06-13 21:41:07,681 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] ERROR {}
 java.lang.IllegalArgumentException: Sorry IllegalArgumentException!
 	at ch.hearc.cafheg.infrastructure.application.Application.getData(Application.java:44)
 	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:35)
 	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
-2021-06-13 21:37:20,125 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
-2021-06-13 21:38:31,015 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
+2021-06-13 21:41:10,534 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-13 21:41:47,100 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
 java.lang.NullPointerException: null
 	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:30)
 	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
+2021-06-13 21:41:48,852 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] ERROR {}
+java.lang.IllegalArgumentException: Sorry IllegalArgumentException!
+	at ch.hearc.cafheg.infrastructure.application.Application.getData(Application.java:44)
+	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:35)
+	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
+2021-06-13 21:41:52,766 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error

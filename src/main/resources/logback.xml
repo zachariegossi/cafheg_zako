@@ -13,13 +13,13 @@
       <onMismatch>DENY</onMismatch>
     </filter>
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-      <fileNamePattern>logs/archived/err.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+      <fileNamePattern>logs/archived/err.%d{dd.MM.yyyy}.%i.log.gz</fileNamePattern>
       <!-- each archived file, size max 10MB -->
       <maxFileSize>10MB</maxFileSize>
       <!-- total size of all archive files, if total size > 20GB, it will delete old archived file -->
       <totalSizeCap>20GB</totalSizeCap>
-      <!-- 60 days to keep -->
-      <maxHistory>60</maxHistory>
+      <!-- 10 days to keep -->
+      <maxHistory>10</maxHistory>
     </rollingPolicy>
 
     <encoder>
@@ -34,13 +34,13 @@
     <file>${INFO_LOG_PATH}info_${timestamp}.log</file>
 
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-      <fileNamePattern>logs/archived/info.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+      <fileNamePattern>logs/archived/info.%d{dd.MM.yyyy}.%i.log.gz</fileNamePattern>
       <!-- each archived file, size max 10MB -->
       <maxFileSize>10MB</maxFileSize>
       <!-- total size of all archive files, if total size > 20GB, it will delete old archived file -->
       <totalSizeCap>20GB</totalSizeCap>
-      <!-- 60 days to keep -->
-      <maxHistory>60</maxHistory>
+      <!-- 2 days to keep -->
+      <maxHistory>2</maxHistory>
     </rollingPolicy>
 
     <encoder>
@@ -62,7 +62,7 @@
   <logger name="ch" level="error">
     <appender-ref ref="FILE_ERROR"/>
   </logger>
-  <root level="error">
+  <root level="debug">
     <appender-ref ref="CONSOLE"/>
   </root>
 

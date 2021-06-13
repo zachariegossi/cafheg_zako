@@ -1,23 +1,38 @@
-2021-06-13 21:37:15,748 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
+2021-06-13 21:41:05,998 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
 java.lang.NullPointerException: null
 	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:30)
 	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
-2021-06-13 21:37:17,444 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] ERROR {}
+2021-06-13 21:41:07,681 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] ERROR {}
 java.lang.IllegalArgumentException: Sorry IllegalArgumentException!
 	at ch.hearc.cafheg.infrastructure.application.Application.getData(Application.java:44)
 	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:35)
 	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
-2021-06-13 21:37:17,447 INFO ch.hearc.cafheg.infrastructure.application.Application [main] INFO {}
+2021-06-13 21:41:07,683 INFO ch.hearc.cafheg.infrastructure.application.Application [main] INFO {}
 java.lang.IllegalArgumentException: Sorry IllegalArgumentException!
 	at ch.hearc.cafheg.infrastructure.application.Application.getData(Application.java:44)
 	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:35)
 	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
-2021-06-13 21:37:18,190 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Starting Application on IG16-GOSSIZ with PID 16876 (started by zacharie.gossi in C:\HE-ARC\07_Semestre8\Industrialisation du logiciel\cafheg_zako)
-2021-06-13 21:37:18,191 INFO ch.hearc.cafheg.infrastructure.application.Application [main] No active profile set, falling back to default profiles: default
-2021-06-13 21:37:20,124 INFO ch.hearc.cafheg.infrastructure.application.Application [main] starting AllocationService
-2021-06-13 21:37:20,125 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
-2021-06-13 21:37:20,989 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Started Application in 3.43 seconds (JVM running for 7.777)
-2021-06-13 21:38:31,015 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
+2021-06-13 21:41:08,416 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Starting Application on IG16-GOSSIZ with PID 17072 (started by zacharie.gossi in C:\HE-ARC\07_Semestre8\Industrialisation du logiciel\cafheg_zako)
+2021-06-13 21:41:08,417 INFO ch.hearc.cafheg.infrastructure.application.Application [main] No active profile set, falling back to default profiles: default
+2021-06-13 21:41:10,534 INFO ch.hearc.cafheg.infrastructure.application.Application [main] starting AllocationService
+2021-06-13 21:41:10,534 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-13 21:41:11,574 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Started Application in 3.749 seconds (JVM running for 8.209)
+2021-06-13 21:41:47,100 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
 java.lang.NullPointerException: null
 	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:30)
 	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
+2021-06-13 21:41:48,852 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] ERROR {}
+java.lang.IllegalArgumentException: Sorry IllegalArgumentException!
+	at ch.hearc.cafheg.infrastructure.application.Application.getData(Application.java:44)
+	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:35)
+	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
+2021-06-13 21:41:48,853 INFO ch.hearc.cafheg.infrastructure.application.Application [main] INFO {}
+java.lang.IllegalArgumentException: Sorry IllegalArgumentException!
+	at ch.hearc.cafheg.infrastructure.application.Application.getData(Application.java:44)
+	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:35)
+	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
+2021-06-13 21:41:49,783 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Starting Application on IG16-GOSSIZ with PID 17504 (started by zacharie.gossi in C:\HE-ARC\07_Semestre8\Industrialisation du logiciel\cafheg_zako)
+2021-06-13 21:41:49,784 INFO ch.hearc.cafheg.infrastructure.application.Application [main] No active profile set, falling back to default profiles: default
+2021-06-13 21:41:52,766 INFO ch.hearc.cafheg.infrastructure.application.Application [main] starting AllocationService
+2021-06-13 21:41:52,766 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-13 21:41:54,312 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Started Application in 5.227 seconds (JVM running for 10.412)
