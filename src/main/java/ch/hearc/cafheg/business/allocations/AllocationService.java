@@ -30,6 +30,7 @@ public class AllocationService {
     this.allocationMapper = allocationMapper;
     this.versementMapper = versementMapper;
     logger.info("starting AllocationService");
+    logger.error("This is an error");
   }
 
   public List<Allocataire> findAllAllocataires(String likeNom) {

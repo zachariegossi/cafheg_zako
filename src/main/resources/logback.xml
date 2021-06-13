@@ -2,12 +2,16 @@
 <configuration>
 
   <property name="ERROR_LOG_PATH" value="logs/err.log"/>
-  <property name="INFO_LOG_PATH" value="logs/info/daily_info.log"/>
+  <property name="INFO_LOG_PATH" value="logs/info/"/>
 
   <!-- ERRORS -->
   <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${ERROR_LOG_PATH}</file>
-
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>ERROR</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
       <fileNamePattern>logs/archived/err.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
       <!-- each archived file, size max 10MB -->
@@ -23,9 +27,11 @@
     </encoder>
   </appender>
 
+  <timestamp key="timestamp" datePattern="dd.MM.yyyy"/>
+
   <!-- INFOS -->
   <appender name="FILE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>${INFO_LOG_PATH}</file>
+    <file>${INFO_LOG_PATH}info_${timestamp}.log</file>
 
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
       <fileNamePattern>logs/archived/info.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
@@ -50,7 +56,7 @@
   </appender>
 
 
-  <logger name="ch.hearc.cafheg.business.allocations" level="info">
+  <logger name="ch.hearc.cafheg" level="info">
     <appender-ref ref="FILE_INFO"/>
   </logger>
   <logger name="ch" level="error">
