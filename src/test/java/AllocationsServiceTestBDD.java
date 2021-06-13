@@ -15,43 +15,45 @@ import org.mockito.Mockito;
 
 public class AllocationsServiceTestBDD {
 
-    private AllocationService allocationService;
+  private AllocationService allocationService;
 
-    private AllocataireMapper allocataireMapper;
-    private AllocationMapper allocationMapper;
-    private VersementMapper versementMapper;
-    private Parent parent1;
-    private Parent parent2;
-    private Enfant enfant;
-    String result;
+  private AllocataireMapper allocataireMapper;
+  private AllocationMapper allocationMapper;
+  private VersementMapper versementMapper;
+  private Parent parent1;
+  private Parent parent2;
+  private Enfant enfant;
+  String result;
 
-    @Before
-    public void initMapper() {
-        allocataireMapper = Mockito.mock(AllocataireMapper.class);
-        allocationMapper = Mockito.mock(AllocationMapper.class);
-        versementMapper = Mockito.mock(VersementMapper.class);
+  @Before
+  public void initMapper() {
+    allocataireMapper = Mockito.mock(AllocataireMapper.class);
+    allocationMapper = Mockito.mock(AllocationMapper.class);
+    versementMapper = Mockito.mock(VersementMapper.class);
 
-        //Parent parent = Mockito.mock(Parent.class);
-        //Enfant enfait = Mockito.mock(Enfant.class);
-        //famille = Mockito.mock(Famille.class);
-    }
+    //Parent parent = Mockito.mock(Parent.class);
+    //Enfant enfait = Mockito.mock(Enfant.class);
+    //famille = Mockito.mock(Famille.class);
+  }
 
-    @Given("Create AllocationService")
-    public void createAllocationService() {
-        allocationService = new AllocationService(allocataireMapper, allocationMapper, versementMapper);
-        parent1 = new Parent(false,false,"",false,false,0);
-        parent2 = new Parent(false,false,"",false,false,0);
-        enfant = new Enfant(new NoAVS("000.0000.000.0000"),"Kelso","Bob");
-    }
-    @When("I give 1st parent with lucrative activity")
-    public void iGiveStParentWithLucrativeActivity() {
-        parent1 = new Parent(true,false,"",false,false,0);
-        result = allocationService.getParentDroitAllocation(new Famille(parent1, parent2, enfant));
-    }
-    @Then("The result of One parent with lucrative activity is 1st parent")
-    public void theResultOfOneParentWithLucrativeActivityIsStParent() {
-        Assertions.assertEquals(result, "Parent1");
-    }
+  @Given("Create AllocationService")
+  public void createAllocationService() {
+    allocationService = new AllocationService(allocataireMapper, allocationMapper, versementMapper);
+    parent1 = new Parent(false, false, "", false, false, 0);
+    parent2 = new Parent(false, false, "", false, false, 0);
+    enfant = new Enfant(new NoAVS("000.0000.000.0000"), "Kelso", "Bob");
+  }
+
+  @When("I give 1st parent with lucrative activity")
+  public void iGiveStParentWithLucrativeActivity() {
+    parent1 = new Parent(true, false, "", false, false, 0);
+    result = allocationService.getParentDroitAllocation(new Famille(parent1, parent2, enfant));
+  }
+
+  @Then("The result of One parent with lucrative activity is 1st parent")
+  public void theResultOfOneParentWithLucrativeActivityIsStParent() {
+    Assertions.assertEquals(result, "Parent1");
+  }
 
     /* Abandoné car plus évalué
     @And("I give 2nd parent with lucrative activity")

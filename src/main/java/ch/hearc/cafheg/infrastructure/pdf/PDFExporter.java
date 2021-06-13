@@ -1,8 +1,8 @@
 package ch.hearc.cafheg.infrastructure.pdf;
 
 import ch.hearc.cafheg.business.allocations.Allocataire;
-import ch.hearc.cafheg.business.versements.Enfant;
 import ch.hearc.cafheg.business.common.Montant;
+import ch.hearc.cafheg.business.versements.Enfant;
 import ch.hearc.cafheg.infrastructure.persistance.EnfantMapper;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

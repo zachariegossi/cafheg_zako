@@ -15,11 +15,16 @@ import ch.hearc.cafheg.infrastructure.persistance.AllocataireMapper;
 import ch.hearc.cafheg.infrastructure.persistance.AllocationMapper;
 import ch.hearc.cafheg.infrastructure.persistance.EnfantMapper;
 import ch.hearc.cafheg.infrastructure.persistance.VersementMapper;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
-
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class RESTController {
@@ -28,7 +33,8 @@ public class RESTController {
   private final VersementService versementService;
 
   public RESTController() {
-    this.allocationService = new AllocationService(new AllocataireMapper(), new AllocationMapper(), new VersementMapper());
+    this.allocationService = new AllocationService(new AllocataireMapper(), new AllocationMapper(),
+        new VersementMapper());
     this.versementService = new VersementService(new VersementMapper(), new AllocataireMapper(),
         new PDFExporter(new EnfantMapper()));
   }
@@ -49,34 +55,35 @@ public class RESTController {
   @PostMapping("/droits/quel-parent")
   public String getParentDroitAllocation(@RequestBody Map<String, Object> parameters) {
 
-    String eR = (String)parameters.getOrDefault("enfantResidence", "");
-    Boolean p1AL = (Boolean)parameters.getOrDefault("parent1ActiviteLucrative", false);
-    String p1Residence = (String)parameters.getOrDefault("parent1Residence", "");
-    Boolean p2AL = (Boolean)parameters.getOrDefault("parent2ActiviteLucrative", false);
-    String p2Residence = (String)parameters.getOrDefault("parent2Residence", "");
-    Boolean pEnsemble = (Boolean)parameters.getOrDefault("parentsEnsemble", false);
+    String eR = (String) parameters.getOrDefault("enfantResidence", "");
+    Boolean p1AL = (Boolean) parameters.getOrDefault("parent1ActiviteLucrative", false);
+    String p1Residence = (String) parameters.getOrDefault("parent1Residence", "");
+    Boolean p2AL = (Boolean) parameters.getOrDefault("parent2ActiviteLucrative", false);
+    String p2Residence = (String) parameters.getOrDefault("parent2Residence", "");
+    Boolean pEnsemble = (Boolean) parameters.getOrDefault("parentsEnsemble", false);
     Number salaireP1 = (Number) parameters.getOrDefault("parent1Salaire", BigDecimal.ZERO);
     Number salaireP2 = (Number) parameters.getOrDefault("parent2Salaire", BigDecimal.ZERO);
 
-    Parent parent1 = new Parent(p1AL,true,p1Residence,p1Residence.equals(eR),false, salaireP1);
-    Parent parent2 = new Parent(p2AL,true,p2Residence,p2Residence.equals(eR),false, salaireP2);
-    Enfant enfant = new Enfant(new NoAVS("000.000.000.000"),"Kelso","Bob");
-    Famille famille = new Famille(parent1,parent2,enfant);
+    Parent parent1 = new Parent(p1AL, true, p1Residence, p1Residence.equals(eR), false, salaireP1);
+    Parent parent2 = new Parent(p2AL, true, p2Residence, p2Residence.equals(eR), false, salaireP2);
+    Enfant enfant = new Enfant(new NoAVS("000.000.000.000"), "Kelso", "Bob");
+    Famille famille = new Famille(parent1, parent2, enfant);
     return inTransaction(() -> allocationService.getParentDroitAllocation(famille));
   }
 
-    @PostMapping("/remove-allocataire")
-    public String removeAllocataire(@RequestBody Map<String, Object> parameters) {
-        String idAllocataire = (String)parameters.getOrDefault("idAllocataire", "0");
-        return inTransaction(() -> allocationService.removeAllocataire(Long.parseLong(idAllocataire)));
-    }
+  @PostMapping("/remove-allocataire")
+  public String removeAllocataire(@RequestBody Map<String, Object> parameters) {
+    String idAllocataire = (String) parameters.getOrDefault("idAllocataire", "0");
+    return inTransaction(() -> allocationService.removeAllocataire(Long.parseLong(idAllocataire)));
+  }
 
   @PostMapping("/update-allocataire")
   public String updateallocataire(@RequestBody Map<String, Object> parameters) {
-    String idAllocataire = (String)parameters.getOrDefault("idAllocataire", "0");
-    String nomAllocataire = (String)parameters.getOrDefault("nomAllocataire", "");
-    String prenomAllocataire = (String)parameters.getOrDefault("prenomAllocataire", "");
-    return inTransaction(() -> allocationService.updateAllocataire(idAllocataire, nomAllocataire, prenomAllocataire));
+    String idAllocataire = (String) parameters.getOrDefault("idAllocataire", "0");
+    String nomAllocataire = (String) parameters.getOrDefault("nomAllocataire", "");
+    String prenomAllocataire = (String) parameters.getOrDefault("prenomAllocataire", "");
+    return inTransaction(() -> allocationService
+        .updateAllocataire(idAllocataire, nomAllocataire, prenomAllocataire));
   }
 
   @GetMapping("/allocataires")

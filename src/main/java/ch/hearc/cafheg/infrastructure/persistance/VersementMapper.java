@@ -5,7 +5,6 @@ import ch.hearc.cafheg.business.versements.VersementAllocation;
 import ch.hearc.cafheg.business.versements.VersementAllocationNaissance;
 import ch.hearc.cafheg.business.versements.VersementParentEnfant;
 import ch.hearc.cafheg.business.versements.VersementParentParMois;
-import ch.hearc.cafheg.infrastructure.application.Application;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
