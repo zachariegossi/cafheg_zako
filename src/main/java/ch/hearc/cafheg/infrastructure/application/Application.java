@@ -26,16 +26,16 @@ public class Application extends SpringBootServletInitializer {
     Database database = new Database();
     Migrations migrations = new Migrations(database);
 
-    logger.debug("Hello from Logback");
-    logger.error("Erreur from LogBack", new NullPointerException());
+    logger.debug("Test of Debug 1");
+    logger.error("Test of Error 1", new NullPointerException());
     database.start();
     migrations.start();
 
     try {
       System.out.println(getData());
     } catch (IllegalArgumentException e) {
-      logger.error("ERROR {}", e);
-      logger.info("INFO {}", e);
+      logger.error("Test of Error 2", e);
+      logger.info("Test of Indo 1", e);
     }
 
   }
