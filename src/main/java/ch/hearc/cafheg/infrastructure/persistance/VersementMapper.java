@@ -11,8 +11,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VersementMapper extends Mapper {
+
+  private static final Logger logger = LoggerFactory.getLogger(VersementMapper.class);
 
   public List<VersementAllocationNaissance> findAllVersementAllocationNaissance() {
     Connection connection = getConnection();
@@ -29,6 +33,7 @@ public class VersementMapper extends Mapper {
       }
       return versements;
     } catch (SQLException e) {
+      logger.error("Unable to findAllVersementAllocationNaissance", e);
       throw new RuntimeException(e);
     }
   }
@@ -48,6 +53,7 @@ public class VersementMapper extends Mapper {
       }
       return versements;
     } catch (SQLException e) {
+      logger.error("Unable to findAllVersementAllocation", e);
       throw new RuntimeException(e);
     }
   }
@@ -67,6 +73,7 @@ public class VersementMapper extends Mapper {
       }
       return versements;
     } catch (SQLException e) {
+      logger.error("Unable to findVersementParentEnfant", e);
       throw new RuntimeException(e);
     }
   }
@@ -87,6 +94,7 @@ public class VersementMapper extends Mapper {
       }
       return versements;
     } catch (SQLException e) {
+      logger.error("Unable to findVersementParentEnfantParMois", e);
       throw new RuntimeException(e);
     }
   }

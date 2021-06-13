@@ -6,8 +6,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class EnfantMapper extends Mapper {
+
+  private static final Logger logger = LoggerFactory.getLogger(EnfantMapper.class);
 
   public Enfant findById(long id) {
     Connection connection = getConnection();
@@ -20,6 +24,7 @@ public class EnfantMapper extends Mapper {
       return new Enfant(new NoAVS(resultSet.getString(1)),
           resultSet.getString(2), resultSet.getString(3));
     } catch (SQLException e) {
+      logger.error("Unable to findEnfantById", e);
       throw new RuntimeException(e);
     }
   }

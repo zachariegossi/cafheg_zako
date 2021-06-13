@@ -6,11 +6,15 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.function.Supplier;
 import javax.sql.DataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Database {
 
   private static DataSource dataSource;
   private static ThreadLocal<Connection> connection = new ThreadLocal<>();
+
+  private static final Logger logger = LoggerFactory.getLogger(Database.class);
 
   public Database() {
   }
@@ -29,6 +33,7 @@ public class Database {
       try {
         connection.get().close();
       } catch (SQLException e) {
+        logger.error("Unable to createTransaction", e);
         throw new RuntimeException(e);
       }
       connection.remove();

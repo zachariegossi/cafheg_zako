@@ -8,8 +8,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AllocataireMapper extends Mapper {
+
+  private static final Logger logger = LoggerFactory.getLogger(AllocataireMapper.class);
 
   public List<Allocataire> findAll(String likeNom) {
     Connection connection = getConnection();
@@ -33,6 +37,7 @@ public class AllocataireMapper extends Mapper {
       }
       return allocataires;
     } catch (SQLException e) {
+      logger.error("Unable to findAllAllocataire", e);
       throw new RuntimeException(e);
     }
   }
@@ -48,6 +53,7 @@ public class AllocataireMapper extends Mapper {
       return new Allocataire(new NoAVS(resultSet.getString(1)),
           resultSet.getString(2), resultSet.getString(3));
     } catch (SQLException e) {
+      logger.error("Unable to findByIdAllocataire", e);
       throw new RuntimeException(e);
     }
   }
@@ -61,6 +67,7 @@ public class AllocataireMapper extends Mapper {
       int nbRowDeleted = preparedStatement.executeUpdate();
       return nbRowDeleted;
     } catch (SQLException e) {
+      logger.error("Unable to removeAllocataireByID", e);
       throw new RuntimeException(e);
     }
   }
@@ -79,6 +86,7 @@ public class AllocataireMapper extends Mapper {
       int nbRowUpdated = preparedStatement.executeUpdate();
       return nbRowUpdated;
     } catch (SQLException e) {
+      logger.error("Unable to updateAllocataireNomPrenom", e);
       throw new RuntimeException(e);
     }
   }
