@@ -1,8 +1,8 @@
-2021-06-13 16:20:31,309 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
+2021-06-13 21:06:07,506 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
 java.lang.NullPointerException: null
 	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:30)
 	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
-2021-06-13 16:20:33,589 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] ERROR {}
+2021-06-13 21:06:09,608 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] ERROR {}
 java.lang.IllegalArgumentException: Sorry IllegalArgumentException!
 	at ch.hearc.cafheg.infrastructure.application.Application.getData(Application.java:44)
 	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:35)

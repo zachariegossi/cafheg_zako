@@ -3,10 +3,13 @@ package ch.hearc.cafheg.business.allocations;
 import ch.hearc.cafheg.business.versements.Famille;
 import ch.hearc.cafheg.business.versements.Parent;
 import ch.hearc.cafheg.business.versements.VersementParentParMois;
+import ch.hearc.cafheg.infrastructure.application.Application;
 import ch.hearc.cafheg.infrastructure.persistance.AllocataireMapper;
 import ch.hearc.cafheg.infrastructure.persistance.AllocationMapper;
 import ch.hearc.cafheg.infrastructure.persistance.VersementMapper;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AllocationService {
 
@@ -18,12 +21,15 @@ public class AllocationService {
   private final AllocationMapper allocationMapper;
   private final VersementMapper versementMapper;
 
+  private static final Logger logger = LoggerFactory.getLogger(Application.class);
+
   public AllocationService(
       AllocataireMapper allocataireMapper,
       AllocationMapper allocationMapper, VersementMapper versementMapper) {
     this.allocataireMapper = allocataireMapper;
     this.allocationMapper = allocationMapper;
     this.versementMapper = versementMapper;
+    logger.info("starting AllocationService");
   }
 
   public List<Allocataire> findAllAllocataires(String likeNom) {

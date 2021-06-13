@@ -2,13 +2,14 @@
 <configuration>
 
   <property name="ERROR_LOG_PATH" value="logs/err.log"/>
-  <property name="INFO_LOG_PATH" value="logs/info"/>
+  <property name="INFO_LOG_PATH" value="logs/info/daily_info.log"/>
 
+  <!-- ERRORS -->
   <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${ERROR_LOG_PATH}</file>
 
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-      <fileNamePattern>logs/archived/error_app.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <fileNamePattern>logs/archived/err.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
       <!-- each archived file, size max 10MB -->
       <maxFileSize>10MB</maxFileSize>
       <!-- total size of all archive files, if total size > 20GB, it will delete old archived file -->
@@ -22,11 +23,12 @@
     </encoder>
   </appender>
 
+  <!-- INFOS -->
   <appender name="FILE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>${INFO_LOG_PATH}_cafheg_%d{yyyy-MM-dd}.log</file>
+    <file>${INFO_LOG_PATH}</file>
 
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-      <fileNamePattern>logs/archived/info_app.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <fileNamePattern>logs/archived/info.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
       <!-- each archived file, size max 10MB -->
       <maxFileSize>10MB</maxFileSize>
       <!-- total size of all archive files, if total size > 20GB, it will delete old archived file -->
@@ -42,24 +44,20 @@
 
   <!-- Console -->
   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-    <layout class="ch.qos.logback.classic.PatternLayout">
-      <Pattern>
-        %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
-      </Pattern>
-    </layout>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} -%msg%n</pattern>
+    </encoder>
   </appender>
 
-  <root level="debug">
-    <appender-ref ref="CONSOLE"/>
-  </root>
 
-  <logger name="ch.hearc.cafheg" level="INFO">
+  <logger name="ch.hearc.cafheg.business.allocations" level="info">
     <appender-ref ref="FILE_INFO"/>
   </logger>
-
-  <logger name="ch.hearc.cafheg" level="ERROR" additivity="false">
+  <logger name="ch" level="error">
     <appender-ref ref="FILE_ERROR"/>
-    <appender-ref ref="CONSOLE"/>
   </logger>
+  <root level="error">
+    <appender-ref ref="CONSOLE"/>
+  </root>
 
 </configuration>
