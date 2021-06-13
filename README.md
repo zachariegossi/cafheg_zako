@@ -40,7 +40,7 @@ n'ai pas complétement et intégralement suivi les principes du TDD car j'ai cr�
 
 ###### 1.2.1 updateallocataire
 La création de ce service a été parfaite, pour moi, pour appliquer le TDD dans les règles de l'art. J'avais déjà créé la méthode
-"removeAllocataire", ce qui m'as permis d'être reès à l'aise avec le projet, ainsi que l'API Rest. J'ai donc créé intégralement ma batterie
+"removeAllocataire", ce qui m'as permis d'être très à l'aise avec les attentes de cette méthode, ainsi que l'API Rest. J'ai donc créé intégralement ma batterie
 de tests, avant de coder quoique ce soit.
 
 ![Test Drive Development 2](images/TDD_1.PNG?raw=true)
@@ -60,9 +60,10 @@ tous les tests. En effet, il vaut mieux être certain de nos choix en termes de 
 J'ai choisi de directement implémenter ces méthodes dans l'API Rest.
 
 ###### 2.1 removeAllocataire 
-En utilisant la méthode déjà existante findVersementParentEnfantParMois, qui retourne une liste de VersementParentParMois, et en y appliquant un un filtre sur un stream,
-on peut trouver si un versement a déjà été effectué pour un allocataire. Si aucun n'est trouvé, on peut alors effacer l'allocataire.
+En utilisant la méthode déjà existante findVersementParentEnfantParMois, qui retourne une liste de VersementParentParMois, et en y appliquant un filtre sur un stream,
+on peut trouver si un versement a déjà été effectué pour un allocataire.
 ![Remove Allocataire 1](images/remove_allocataire_0.PNG?raw=true)
+ Si aucun n'est trouvé, on peut alors effacer l'allocataire.
 ![Remove Allocataire 2](images/remove_allocataire_1.PNG?raw=true)
 
 ###### 2.2 updateAllocataire 
@@ -77,12 +78,12 @@ Impossible de le modifié une deuxième fois car le nom et le prénom sont ident
 
 #### 3. Standard de code et format
 Chapitre rapidement effectué, mais intéressant car je n'ai jamais changé de format de code lors de mes
-études et de mon travail. Il est bon de savoir qu'on peut partager à l'ensemble des participants d'une projet,
-des standards communs. Le formatage se fait a la sauvegarde de chaque document, ainsi qu'à la saisie de Ctrl+Alt+S.
+études et de mon travail. Il est bon de savoir qu'on peut partager à l'ensemble des participants d'un projet,
+des standards communs. Le formatage se fait a la sauvegarde de chaque document, ainsi qu'à la saisie de Ctrl+Maj+S.
 
 #### 4. Loggers
 
-J'ai ajouté des logs de type "Info" dans les services précedement créés.
+J'ai ajouté des logs d'erreur dans chaque exception. J'ai ajouté des logs de type "Info" dans les services précedement créés, en plus des informations de retour.
 ###### 4.1 Debug dans la console (Ainsi que tout les autres niveaux supérieurs.)
 Définition du "root-level" à "debug", avec un appender "Console" permet de loguer toutes les traces dans la console
 ```xml
