@@ -17,3 +17,7 @@ java.lang.IllegalArgumentException: Sorry IllegalArgumentException!
 2021-06-13 21:37:20,124 INFO ch.hearc.cafheg.infrastructure.application.Application [main] starting AllocationService
 2021-06-13 21:37:20,125 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
 2021-06-13 21:37:20,989 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Started Application in 3.43 seconds (JVM running for 7.777)
+2021-06-13 21:38:31,015 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
+java.lang.NullPointerException: null
+	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:30)
+	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
