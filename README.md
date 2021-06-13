@@ -16,13 +16,13 @@ Afin de prendre en main l'API, j'ai utilisé Postman, qui permet de créer et ma
 requêtes POST et GET très simplement. J'en ai créé quelque unes afin de mieux comprendre
 le fonctionnement de l'application.
 
-![TDD 1](images/TDD_0.PNG?raw=true)
+![Test API 1](images/TEST_API_0.PNG?raw=true)
 
 En ayant déjà configuré le déploiement de l'application sur TOMCAT (Surtout utilisé avec la branche Master), 
 j'ai pu tester tout au long du projet directement les méthodes développées via l'API, sans lancer l'application car
 les déploiements étaient également automatisés.
 
-![alt text](https://github.com/zachariegossi/cafheg_zako/blob/master/images/TEST_API_1.png "Test API 1")
+![Test_API_2](images/TEST_API_1.png?raw=true)
 
 ###### 1.2 TDD
 Afin de pratiqué le TDD, j'ai effectué une 
@@ -36,16 +36,16 @@ Je me suis vite aperçu qu'elle ne réagissait pas de la manière souhaitée. En
 n'ai pas complétement et intégralement suivi les principes du TDD car j'ai créé du code, petit à petit, à mesure que mes tests
 étaient prêt. J'ai mieux respecté le principe par la suite.
 
-![alt text](https://github.com/zachariegossi/cafheg_zako/blob/master/images/TDD_0.png "Test Drive Development 1")
+![Test Drive Development 1](images/TDD_0.png?raw=true)
 
 ###### 1.2.1 updateallocataire
 La création de ce service a été parfaite, pour moi, pour appliquer le TDD dans les règles de l'art. J'avais déjà créé la méthode
 "removeAllocataire", ce qui m'as permis d'être reès à l'aise avec le projet, ainsi que l'API Rest. J'ai donc créé intégralement ma batterie
 de tests, avant de coder quoique ce soit.
 
-![alt text](https://github.com/zachariegossi/cafheg_zako/blob/master/images/TDD_1.png "Test Drive Development 2")
+![Test Drive Development 2](images/TDD_1.png?raw=true)
 Le coverage a été assuré.
-![alt text](https://github.com/zachariegossi/cafheg_zako/blob/master/images/TDD_2.png "Test Drive Development 3")
+![Test Drive Development 3](images/TDD_2.png?raw=true)
 
 Je trouve que le TDD est difficile à appliquer car il faut penser a tous les comportements d'un service, au début, étape à laquelle normalement,
 je n'ai jamais tout en tête. Ce principe demande également beaucoup de rigueur. Ca a été un exercice intéressant et introspectif sur ma façon de coder.
@@ -62,8 +62,8 @@ J'ai choisi de directement implémenter ces méthodes dans l'API Rest.
 ###### 2.1 removeAllocataire 
 En utilisant la méthode déjà existante findVersementParentEnfantParMois, qui retourne une liste de VersementParentParMois, et en y appliquant un un filtre sur un stream,
 on peut trouver si un versement a déjà été effectué pour un allocataire. Si aucun n'est trouvé, on peut alors effacer l'allocataire.
-![alt text](https://github.com/zachariegossi/cafheg_zako/blob/master/images/remove_allocataire_0.png "Remove Allocataire 1")
-![alt text](https://github.com/zachariegossi/cafheg_zako/blob/master/images/remove_allocataire_1.png "Remove Allocataire 2")
+![Remove Allocataire 1](images/remove_allocataire_0.png?raw=true)
+![Remove Allocataire 2](images/remove_allocataire_1.png?raw=true)
 
 ###### 2.2 updateAllocataire 
 La mise à jour se fait uniquement sur le nom et/ou le prénom, et n'est effectué uniquement si un changement est effectif.
@@ -71,9 +71,9 @@ La méthode findById d'AllocataireMapper, permet de s'assurer que le nom et/ou l
 J'ai appliqué intégralement les principes du TDD pour l'elaboration de cette méthode.
 
 Le premier appel modifie bien l'allocataire numéro 14.
-![alt text](https://github.com/zachariegossi/cafheg_zako/blob/master/images/update_allocataire_0.png "Remove Allocataire 1")
+![Remove Allocataire 1](images/update_allocataire_0.png?raw=true)
 Impossible de le modifié une deuxième fois car le nom et le prénom sont identique.
-![alt text](https://github.com/zachariegossi/cafheg_zako/blob/master/images/update_allocataire_1.png "Remove Allocataire 2")
+![Remove Allocataire 2](images/update_allocataire_1.png?raw=true)
 
 #### 3. Standard de code et format
 Chapitre rapidement effectué, mais intéressant car je n'ai jamais changé de format de code lors de mes
