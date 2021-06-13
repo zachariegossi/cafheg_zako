@@ -2,7 +2,6 @@ package ch.hearc.cafheg.infrastructure.persistance;
 
 import ch.hearc.cafheg.business.allocations.Allocataire;
 import ch.hearc.cafheg.business.allocations.NoAVS;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -53,27 +52,27 @@ public class AllocataireMapper extends Mapper {
     }
   }
 
-    public int removeAllocataireByID(long id) {
-      Connection connection = getConnection();
-      try {
-        PreparedStatement preparedStatement = connection.prepareStatement(
-                "DELETE FROM ALLOCATAIRES WHERE NUMERO=?");
-        preparedStatement.setLong(1, id);
-        int nbRowDeleted = preparedStatement.executeUpdate();
-        return nbRowDeleted;
-      } catch (SQLException e) {
-        throw new RuntimeException(e);
-      }
+  public int removeAllocataireByID(long id) {
+    Connection connection = getConnection();
+    try {
+      PreparedStatement preparedStatement = connection.prepareStatement(
+          "DELETE FROM ALLOCATAIRES WHERE NUMERO=?");
+      preparedStatement.setLong(1, id);
+      int nbRowDeleted = preparedStatement.executeUpdate();
+      return nbRowDeleted;
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
     }
+  }
 
   public int updateAllocataireNomPrenom(long id, String nomAllocataire, String prenomAllocataire) {
     Connection connection = getConnection();
     try {
       PreparedStatement preparedStatement = connection.prepareStatement(
-              //UPDATE table_name
-              //SET column1 = value1, column2 = value2, ...
-              //WHERE condition;
-              "UPDATE ALLOCATAIRES SET NOM=?, PRENOM=? WHERE NUMERO=?");
+          //UPDATE table_name
+          //SET column1 = value1, column2 = value2, ...
+          //WHERE condition;
+          "UPDATE ALLOCATAIRES SET NOM=?, PRENOM=? WHERE NUMERO=?");
       preparedStatement.setString(1, nomAllocataire);
       preparedStatement.setString(2, prenomAllocataire);
       preparedStatement.setLong(3, id);
