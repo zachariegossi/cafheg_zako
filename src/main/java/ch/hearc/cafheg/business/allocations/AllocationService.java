@@ -53,6 +53,60 @@ public class AllocationService {
 
         Parent parent1 = famille.getParent1();
         Parent parent2 = famille.getParent2();
+        //Enfant enfant = famille.getEnfant();
+
+        // Both parent exists
+        if (parent1 == null) {
+            return PARENT_2;
+        }
+        if (parent2 == null) {
+            return PARENT_1;
+        }
+
+        // Lucrative activity
+        if (!parent1.isActivityLucrative() && parent2.isActivityLucrative()) {
+            return PARENT_2;
+        }
+        if (parent1.isActivityLucrative() && !parent2.isActivityLucrative()) {
+            return PARENT_1;
+        }
+
+        // Parental Authority
+        if(!parent1.isAutoriteParentale() && parent2.isAutoriteParentale()){
+            return PARENT_2;
+        }
+        if(parent1.isAutoriteParentale() && !parent2.isAutoriteParentale()){
+            return PARENT_1;
+        }
+
+        // Living with children
+        if(parent1.islivingWithChild() && parent2.islivingWithChild()) {
+
+            // Both Parent employed or Both Independant
+            if (!parent1.isIndependant() && !parent2.isIndependant() || parent1.isIndependant() && parent2.isIndependant()){
+                if(parent1.getSalaire().doubleValue() > parent2.getSalaire().doubleValue()){
+                    return PARENT_1;
+                }
+                if(parent1.getSalaire().doubleValue() < parent2.getSalaire().doubleValue()){
+                    return PARENT_2;
+                }
+                //One employed and one independant.
+            } else {
+                if(parent1.isIndependant()){
+                    return PARENT_2;
+                } else {
+                    return PARENT_1;
+                }
+            }
+        } else{
+            if(parent1.islivingWithChild()){
+                return PARENT_1;
+            }
+            if(parent2.islivingWithChild()){
+                return PARENT_2;
+            }
+        }
+
 
 
         return DRAW;
