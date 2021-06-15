@@ -44,20 +44,8 @@ public class AllocationService {
   public String getParentDroitAllocation(Famille famille) {
     logger.info("Déterminer le droit aux allocations");
 
-    /*
-    String eR = (String)parameters.getOrDefault("enfantResidence", "");
-    Boolean p1AL = (Boolean)parameters.getOrDefault("parent1ActiviteLucrative", false);
-    String p1Residence = (String)parameters.getOrDefault("parent1Residence", "");
-    Boolean p2AL = (Boolean)parameters.getOrDefault("parent2ActiviteLucrative", false);
-    String p2Residence = (String)parameters.getOrDefault("parent2Residence", "");
-    Boolean pEnsemble = (Boolean)parameters.getOrDefault("parentsEnsemble", false);
-    Number salaireP1 = (Number) parameters.getOrDefault("parent1Salaire", BigDecimal.ZERO);
-    Number salaireP2 = (Number) parameters.getOrDefault("parent2Salaire", BigDecimal.ZERO);
-    */
-
     Parent parent1 = famille.getParent1();
     Parent parent2 = famille.getParent2();
-    //Enfant enfant = famille.getEnfant();
 
     // Both parent exists
     if (parent1 == null) {
