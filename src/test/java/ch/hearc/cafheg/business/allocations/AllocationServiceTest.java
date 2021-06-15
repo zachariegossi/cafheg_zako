@@ -90,7 +90,8 @@ class AllocationServiceTest {
     Famille famille = new Famille(parent1, parent2, enfant);
     parameters.put("parent1ActiviteLucrative", true);
     String result = allocationService.getParentDroitAllocation(famille);
-    assertThat(result.equals("parent1"));
+    // No assertion / wrong
+    assertThat(result).isEqualTo("Parent2");
   }
 
   @Test
@@ -101,7 +102,8 @@ class AllocationServiceTest {
     Famille famille = new Famille(parent1, parent2, enfant);
     parameters.put("parent1ActiviteLucrative", true);
     String result = allocationService.getParentDroitAllocation(famille);
-    assertThat(result.equals("parent1"));
+    // No assertion / wrong
+    assertThat(result).isEqualTo("Parent1");
   }
 
   @Test
@@ -217,24 +219,31 @@ class AllocationServiceTest {
   }
 
 
+  // Integration-test
   //INSERT INTO ALLOCATAIRES VALUES(14,'756.6457.6513.65','Kacy','Stead');
   @Test
   void updateAllocataire_Given_14_Kacy_Steed_ShouldBe_Allocataire_Updated() {
     String id = "14";
     String nom = "Kacy";
     String prenom = "Steed";
+    Mockito.when(allocataireMapper.findById(Long.parseLong(id)))
+        .thenReturn(new Allocataire(new NoAVS("756"), nom, "Arnaud"));
+    Mockito.when(allocataireMapper.updateAllocataireNomPrenom(Long.parseLong(id), nom, prenom))
+        .thenReturn(1);
     String result = allocationService.updateAllocataire(id, nom, prenom);
-    assertThat(result.equals("1 Allocataire(s) Updated"));
+    // No assertion
+    assertThat(result).isEqualTo("1 Allocataire(s) Updated");
   }
 
   //INSERT INTO ALLOCATAIRES VALUES(14,'756.6457.6513.65','Kacy','Stead');
+  // Integration-test
   @Test
   void updateAllocataire_Given_25_Kacy_Steed_ShouldBe_Allocataire_Unfound() {
     String id = "25";
     String nom = "Kacy";
     String prenom = "Steed";
     String result = allocationService.updateAllocataire(id, nom, prenom);
-    assertThat(result.equals("Allocataire Unfound"));
+    assertThat(result).isEqualTo("Allocataire Unfound");
   }
 
   //INSERT INTO ALLOCATAIRES VALUES(14,'756.6457.6513.65','Kacy','Stead');
@@ -243,6 +252,10 @@ class AllocationServiceTest {
     String id = "25";
     String nom = "Kacy";
     String prenom = "Steed";
+    Mockito.when(allocataireMapper.findById(Long.parseLong(id)))
+        .thenReturn(new Allocataire(new NoAVS("756"), nom, prenom));
+    Mockito.when(allocataireMapper.updateAllocataireNomPrenom(Long.parseLong(id), nom, prenom))
+        .thenReturn(1);
     String result = allocationService.updateAllocataire(id, nom, prenom);
     assertThat(result.equals("Allocataire Correct"));
   }

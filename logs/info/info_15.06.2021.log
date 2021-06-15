@@ -1,87 +1,125 @@
-2021-06-13 21:41:05,998 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
-java.lang.NullPointerException: null
-	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:30)
-	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
-2021-06-13 21:41:07,681 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] ERROR {}
-java.lang.IllegalArgumentException: Sorry IllegalArgumentException!
-	at ch.hearc.cafheg.infrastructure.application.Application.getData(Application.java:44)
-	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:35)
-	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
-2021-06-13 21:41:10,534 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
-2021-06-13 21:41:47,100 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] Erreur from LogBack
-java.lang.NullPointerException: null
-	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:30)
-	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
-2021-06-13 21:41:48,852 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] ERROR {}
-java.lang.IllegalArgumentException: Sorry IllegalArgumentException!
-	at ch.hearc.cafheg.infrastructure.application.Application.getData(Application.java:44)
-	at ch.hearc.cafheg.infrastructure.application.Application.start(Application.java:35)
-	at ch.hearc.cafheg.infrastructure.application.Application.main(Application.java:21)
-2021-06-13 21:41:52,766 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
 2021-06-15 20:35:27,995 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,014 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:35:28,068 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
 2021-06-15 20:35:28,089 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,090 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,092 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,092 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,094 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,095 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,097 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,097 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,099 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,100 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,102 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,103 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,104 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,105 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,107 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,107 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,109 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,109 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,111 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,112 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:35:28,113 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
 2021-06-15 20:35:28,135 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,135 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,137 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,138 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,141 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,142 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,144 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,145 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:28,147 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
 2021-06-15 20:35:28,158 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:28,158 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:35:50,149 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,160 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:35:50,203 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
 2021-06-15 20:35:50,218 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,219 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,223 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,224 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,226 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,227 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,229 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,229 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,231 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,232 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,233 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,234 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,235 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,236 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,237 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,238 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,239 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,240 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,244 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,244 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:35:50,247 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
 2021-06-15 20:35:50,266 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,267 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,269 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,269 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,271 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,272 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,273 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,274 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:35:50,275 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
 2021-06-15 20:35:50,285 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:35:50,285 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:39:56,714 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:39:56,726 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:40:31,261 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:40:31,270 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:41:19,483 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:41:19,486 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:05,772 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:05,776 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,425 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,437 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:42:33,488 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
 2021-06-15 20:42:33,508 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,509 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,512 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,512 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,515 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,515 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,517 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,518 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,520 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,521 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,523 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,524 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,526 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,527 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,529 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,529 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,532 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,532 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,534 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,535 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:42:33,537 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
 2021-06-15 20:42:33,552 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,553 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,555 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,556 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,558 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,559 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,561 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,562 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Déterminer le droit aux allocations
 2021-06-15 20:42:33,564 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
 2021-06-15 20:42:33,575 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:42:33,576 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:44:59,386 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:44:59,401 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Unable to update Allocataire.
 2021-06-15 20:45:29,368 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:45:40,229 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Unable to update Allocataire.
 2021-06-15 20:46:19,801 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:46:19,816 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Unable to update Allocataire.
 2021-06-15 20:46:51,030 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:46:51,051 INFO ch.hearc.cafheg.infrastructure.application.Application [main] 1 Allocataire(s) Updated
 2021-06-15 20:47:53,369 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:47:53,381 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Unfound
 2021-06-15 20:48:18,549 ERROR ch.hearc.cafheg.infrastructure.application.Application [main] This is an error
+2021-06-15 20:48:18,564 INFO ch.hearc.cafheg.infrastructure.application.Application [main] Allocataire Correct
